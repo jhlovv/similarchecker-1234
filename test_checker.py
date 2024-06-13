@@ -10,5 +10,8 @@ class TestChecker(TestCase):
         self.checker.update_length_similarity("123", "123")
         self.checker.update_length_similarity("132", "123")
         self.assertEqual(self.checker.get_length_similarity(), 60)
-        pass
+
+    def test_length_0score(self):
+        self.checker.update_length_similarity("A", "BB")
+        self.assertEqual(self.checker.get_length_similarity(), 0)
 
