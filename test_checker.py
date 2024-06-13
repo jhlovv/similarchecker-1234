@@ -15,3 +15,8 @@ class TestChecker(TestCase):
         self.checker.update_length_similarity("A", "BB")
         self.assertEqual(self.checker.get_length_similarity(), 0)
 
+    def test_length_partial_score(self):
+        self.checker.update_length_similarity("AAABB", "BAA")
+        self.assertEqual(self.checker.get_length_similarity(), 36)
+
+
