@@ -6,5 +6,5 @@ class Checker():
     def get_length_similarity(self):
         return self.length_similarity
     def update_length_similarity(self, str1, str2):
-        if str1 == str2:
+        if len(str1) == len(str2):
             self.length_similarity = 60
